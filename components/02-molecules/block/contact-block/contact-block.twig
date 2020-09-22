@@ -1,0 +1,95 @@
+{#
+/**
+* @file
+* Theme override to display a block.
+*
+* Available variables:
+* - block__heading_element - the heading tag used by the Title.
+* - block__heading - the content of the title.
+* - block_base_class - the base classname
+* - block_modifiers - array of modifiers to add to the base classname
+*    Available block_modifiers: contact-block
+* - block_blockname - blockname prepended to the base classname
+* - block__phone: the content of the contact phone number
+* - block__button:  array of button properties
+* - block__schedule: the content of the the schedule
+* - block__content - the content of the block
+* - block__social_heading: the heading tag used by the social section.
+* - block__social_content: the content for the social network images
+*/
+#}
+
+{% set block_base_class = block_base_class|default('contact-block') %}
+
+<div {{ bem(block_base_class, block_modifiers, block_blockname) }} {{ attributes }}>
+  {# Main Information Container #}
+  <div {{ bem('main-container', block_modifiers, block_base_class) }}>
+
+    {# Title #}
+    {{ title_prefix }}
+    {% if block__heading %}
+      <{{block__heading_element}} {{ bem('heading', block_modifiers, block_base_class) }}>
+        {{ block__heading }}
+      </{{block__heading_element}}>
+    {% endif %}
+    {{ title_suffix }}
+
+    {# Phone #}
+    {% if block__phone %}
+      <a {{ bem('phone', block_modifiers, block_base_class) }} href='tel:{{ block__phone }}'>
+        <strong>{{ block__phone }}</strong>
+      </a>
+    {% endif %}
+
+    {# Button #}
+    {% if block__button %}
+      <div {{ bem('cta', block_modifiers, block_base_class) }}>
+        {# Button #}
+        {% include "@atoms/buttons/button.twig" with {
+          button_modifiers: block__button.modifiers,
+          button_content: block__button.content,
+          button_url: block__button.url,
+          button_type: 'link'
+        } %}
+      </div>
+    {% endif %}
+
+    {# Schedule #}
+    {% if block__schedule %}
+      <p>
+        <strong>Horario:</strong>
+        {{ block__schedule }}
+      </p>
+    {% endif %}
+  </div>
+
+  {# Secondary Information Container #}
+  <div {{ bem('secondary-container', block_modifiers, block_base_class) }}>
+
+    {# Content #}
+    <div {{ bem('content', block_modifiers, block_base_class) }}>
+      {% block block__content %}
+        {{ block__content }}
+      {% endblock %}
+    </div>
+
+    {# Social Network Content #}
+    {% if block__social_content %}
+      <div {{ bem('social-content', block_modifiers, block_base_class) }}>
+
+        {# Social networks heading #}
+        {% if block__social_heading %}
+          <h3 {{ bem('social-heading', block_modifiers, block_base_class) }}>
+            {{ block__social_heading }}
+          </h3>
+        {% endif %}
+
+        {# Social Images #}
+        {% include "@molecules/social-links/social-links.twig" with {
+          items: block__social_content,
+        } %}
+
+      </div>
+    {% endif %}
+  </div>
+</div>

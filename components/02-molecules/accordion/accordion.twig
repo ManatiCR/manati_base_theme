@@ -1,0 +1,42 @@
+{#
+/**
+ * Available variables:
+ * - accordion__heading -  the content of the title
+ * - accordion__heading_element - heading tag indicator (h1, h2, h3)
+ * - accordion__elements - array with the content of the accordion, includes: (title, content)
+ * - accordion__modifiers - array of modifiers to add to the accordion classname (two-col)
+ */
+#}
+
+{% set accordion__base_class = 'accordion' %}
+
+<div
+	{{ bem(accordion__base_class, accordion__modifiers, accordion__blockname)}} {{ attributes }}>
+	{# Title #}
+	{{ title_prefix }}
+	{% if accordion__heading %}
+		<{{accordion__heading_element}} {{ bem('heading', accordion__heading__modifiers, accordion__base_class) }}>
+			{{ accordion__heading }}
+		</{{accordion__heading_element}}>
+	{% endif %}
+	{{ title_suffix }}
+
+	{# Content #}
+	<ul {{ bem('list', accordion__list__modifiers, accordion__base_class) }}>
+		{% for element in accordion__elements %}
+			<li {{bem('item', '', accordion__base_class)}}>
+        <button {{ bem('button', accordion__button__modifiers, accordion__base_class) }}>
+				  <h4 {{bem('title')}}>{{element.title}}</h4>
+          {% include "@atoms/images/icons/_icon.twig" with {
+            icon_base_class: 'button__icon',
+            icon_name: 'arrow-down',
+            icon_extra_class: ['accordion__icon'],
+          } %}
+        </button>
+        <div {{bem('content', '', accordion__base_class, 'text-long')}}>
+          {{element.content}}
+        </div>
+			</li>
+		{% endfor %}
+	</ul>
+</div>

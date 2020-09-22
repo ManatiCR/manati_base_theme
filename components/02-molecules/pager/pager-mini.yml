@@ -1,0 +1,8 @@
+items:
+  previous: {
+    text: 'Anterior'
+  }
+  next: {
+    text: 'Siguiente'
+  }
+  current: 5

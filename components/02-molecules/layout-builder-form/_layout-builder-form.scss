@@ -1,0 +1,73 @@
+// Styles for layout builder form.
+
+.layout-builder-form {
+  @include wrapper;
+
+  margin-bottom: px2rem(20px);
+
+  .form-actions {
+    @include small {
+      display: flex;
+      flex-wrap: wrap;
+      position: fixed;
+      width: 100%;
+      left: 0;
+      bottom: 0;
+      z-index: 10;
+      background: $black;
+      padding: px2rem(15px);
+      justify-content: center;
+      border-top: solid 4px $gray-darker;
+    }
+
+    .form-wrapper {
+      .form-item__label {
+        color: $white;
+        min-width: 100%;
+        align-self: center;
+      }
+    }
+  }
+
+  input {
+    margin-right: px2rem(10);
+
+    &[type='submit'] {
+      margin-bottom: px2rem(10);
+
+      @include small {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .form-item {
+    display: flex;
+    max-width: none;
+    margin-bottom: 0;
+  }
+
+  .vertical-tabs {
+    width: 100%;
+
+    .form-item {
+      padding: px2rem(10);
+    }
+  }
+}
+
+// Discard changes / Revert confirmation form.
+
+.layout-builder-discard-changes,
+.layout-builder-revert-overrides {
+  @include wrapper;
+
+  .form-actions {
+    margin-top: px2rem(20);
+    display: flex;
+  }
+
+  input[type='submit'] {
+    margin-right: px2rem(10);
+  }
+}

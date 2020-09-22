@@ -1,0 +1,34 @@
+.label {
+  @include list-reset;
+}
+
+.label__link:hover {
+  font-weight: normal;
+}
+
+.label__item {
+  display: inline-block;
+  font-weight: 600;
+
+  a:hover {
+    text-decoration: none;
+  }
+
+  &::after {
+    content: '/';
+    display: inline-block;
+    margin-left: 0.1rem;
+  }
+
+  &:last-child {
+    font-weight: 600;
+
+    a {
+      text-decoration: none;
+    }
+
+    &::after {
+      content: '';
+    }
+  }
+}

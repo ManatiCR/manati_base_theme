@@ -1,0 +1,4 @@
+button_content: 'Link Button'
+button_url: '#'
+button_modifiers:
+  - 'link'

@@ -1,0 +1,16 @@
+card__heading: 'Beneficios de asociarse'
+card__heading_element: 'h2'
+card__body: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+card__modifiers:
+  - 'image'
+card__buttons:
+  - content: 'Beneficios'
+    url: '#'
+    type: 'link'
+    icon:
+      - 'arrow'
+    modifiers:
+      - 'alt'
+card__image:
+  src: 'https://cdn.shopify.com/s/files/1/2464/0087/collections/workout-fitness-center_600x600_crop_center.jpg?v=1585761876'
+  alt: 'Alt text'

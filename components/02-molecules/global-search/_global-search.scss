@@ -1,0 +1,59 @@
+// Views exposed form.
+#block-global-search-page-exposed-form {
+  width: auto;
+  max-width: px2rem(200);
+  margin-left: px2rem(30);
+
+  .form-item {
+    margin: 0;
+  }
+
+  h2,
+  .form-actions,
+  label[for='edit-texto'],
+  label[for='edit-texto--2'] {
+    @extend .visually-hidden;
+  }
+
+  #edit-texto,
+  #edit-texto--2 {
+    height: px2rem(28);
+    line-height: px2rem(28);
+    font-size: px2rem(12);
+    border: 1px solid $gray-lightest;
+    background: $white no-repeat center right px2rem(6) / px2rem(20) px2rem(18)
+      url('data:image/svg+xml;utf-8,<svg viewBox="0 0 20 19" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M14.2265 11.5312H13.323L13.0089 11.244C14.1184 10.0521 14.7932 8.5069 14.7932 6.81391C14.7932 3.05053 11.4818 -1.3946e-05 7.39659 -1.3946e-05C3.3114 -1.3946e-05 0 3.05053 0 6.81391C0 10.5773 3.3114 13.6278 7.39659 13.6278C9.23436 13.6278 10.9105 13.0072 12.2044 11.9862L12.5185 12.2734V13.1037L18.2059 18.3357L19.9025 16.7727L14.2265 11.5312V11.5312ZM7.39513 11.5296C4.56622 11.5296 2.27441 9.41838 2.27441 6.81232C2.27441 4.2073 4.56622 2.09499 7.39513 2.09499C10.2229 2.09499 12.5159 4.2073 12.5159 6.81232C12.5159 9.41838 10.2229 11.5296 7.39513 11.5296V11.5296Z" fill="rgb(109,110,113)"/></svg>');
+    border-radius: 0;
+    padding: 0 px2rem(30) 0 px2rem(20);
+    width: 100%;
+
+    @include menu-medium {
+      background-color: $near-white;
+    }
+  }
+}
+
+// Search page.
+.global-search {
+  margin-bottom: px2rem(30);
+
+  .views-exposed-form {
+    display: flex;
+    flex-flow: row wrap;
+    margin-bottom: px2rem(40);
+
+    .form-item {
+      margin-right: px2rem(20);
+      flex: 0 1 25rem;
+
+      input {
+        width: 100%;
+        margin-bottom: px2rem(10);
+      }
+    }
+  }
+
+  .global-search__results {
+    @include heading-medium($color: $red, $font-weight: 600);
+  }
+}

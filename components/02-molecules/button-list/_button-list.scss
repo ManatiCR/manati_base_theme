@@ -1,0 +1,51 @@
+.button-list {
+  @include padding-xxs(top bottom);
+
+  &__heading {
+    @include heading-large;
+    @include margin-xs(bottom);
+
+    font-weight: 600;
+  }
+}
+
+.button-list .button-list__container {
+  @include responsive-buttons;
+
+  padding: 0 px2rem(15);
+  @include medium {
+    padding: 0 px2rem(10);
+  }
+}
+
+.button-list--alt {
+  .button-list__heading {
+    @include padding-xxs(right left);
+  }
+
+  & .button-list__container {
+    background-color: $near-white;
+    display: flex;
+    flex-direction: column;
+  }
+
+  & .button-list__container .button {
+    margin-right: 0;
+    @include margin-xxs(top bottom);
+
+    padding: px2rem(10) px2rem(5);
+
+    &:first-child {
+      margin-top: px2rem(20);
+    }
+
+    &:last-child {
+      margin-bottom: px2rem(20);
+    }
+
+    &:not(:last-child) {
+      @include no-bottom;
+      @include padding-xs(bottom);
+    }
+  }
+}

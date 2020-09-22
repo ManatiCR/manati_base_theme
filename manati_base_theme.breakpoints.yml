@@ -1,0 +1,36 @@
+# Breakpoints - change based on site need
+manati_base_theme.small:
+  label: small (under 400px)
+  mediaQuery: ''
+  weight: 0
+  multipliers:
+    - 1x
+    - 2x
+manati_base_theme.small-med:
+  label: 'small-med (min-width: 400px)'
+  mediaQuery: 'all and (min-width: 25em)'
+  weight: 1
+  multipliers:
+    - 1x
+    - 2x
+manati_base_theme.small-large:
+  label: 'small-large (min-width: 656px)'
+  mediaQuery: 'all and (min-width: 41em)'
+  weight: 2
+  multipliers:
+    - 1x
+    - 2x
+manati_base_theme.medium:
+  label: 'medium (min-width: 768px)'
+  mediaQuery: 'all and (min-width: 48em)'
+  weight: 3
+  multipliers:
+    - 1x
+    - 2x
+manati_base_theme.large:
+  label: 'large (min-width: 980px)'
+  mediaQuery: 'all and (min-width: 61.25em)'
+  weight: 4
+  multipliers:
+    - 1x
+    - 2x

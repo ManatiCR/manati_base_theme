@@ -1,0 +1,67 @@
+.contact-block {
+  width: 100%;
+}
+
+.contact-block__main-container {
+  @include padding-md(top bottom);
+  @include padding-sm(left right);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background-color: $near-white;
+  color: $red;
+}
+
+.contact-block__heading {
+  @include heading-medium($color: $red, $font-weight: 600, $margin: 0);
+  @include margin-xs(bottom);
+
+  text-decoration: underline;
+}
+
+.contact-block__phone {
+  @include heading-medium($color: $red, $font-weight: 600, $margin: 0);
+  &:hover {
+    color: $red;
+    font-weight: 600;
+  }
+}
+
+.contact-block__cta {
+  @include margin-xs(top bottom);
+}
+
+.contact-block__secondary-container {
+  @include padding-sm(top right bottom left);
+
+  background-color: $red;
+  color: $white;
+
+  a,
+  a:hover {
+    color: $white;
+  }
+}
+
+.contact-block__content {
+  @include padding-sm(bottom);
+
+  > p {
+    color: $white;
+  }
+}
+
+.contact-block__social-content {
+  @include padding-sm(top);
+
+  border-top: 1px solid $white;
+}
+
+.contact-block__social-heading {
+  @include heading-medium($font-size: 1rem, $color: $white, $font-weight: 600);
+  @include margin-xs(bottom);
+
+  text-decoration: underline;
+}

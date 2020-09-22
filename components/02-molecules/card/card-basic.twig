@@ -1,0 +1,51 @@
+{#
+/**
+ * Available variables:
+ * - card__heading -  the content of the title
+ * - card__heading_element - heading tag indicator (h1, h2, h3)
+ * - card__body - array with the content of the card
+ * - card__buttons - array of buttons properties
+ * - card__modifiers - array of modifiers to add to the base classname.
+ *    Available card__modifiers: alt(red bg), outline (with shadow border), rounded (circles svg and image), underline (underlined heading)
+ * - card__image - array of image properties.
+ * - card__svg - the decorative svg element
+ * - card__container__modifiers - array of modifiers to add to the heading classname
+ *    Available card__container__modifiers: rounded (circles svg and image)
+ * - card__heading__modifiers - array of modifiers to add to the heading classname
+ *    Available card__heading__modifiers: underline (underlined heading)
+ * - card__body__modifiers - array of modifiers to add to the body classname
+ * - card__cta__modifiers - array of modifiers to add to the cta classname
+ */
+#}
+
+{% set card__base_class = 'card' %}
+
+<div {{ bem(card__base_class, card__modifiers, card__blockname) }} {{ attributes }}>
+  {% if card__heading %}
+    {{ title_prefix }}
+    <{{card__heading_element}} {{ bem('heading', card__heading__modifiers, card__base_class) }}>
+      <a href={{card__button__url}}>{{ card__heading }}</a>
+    </{{card__heading_element}}>
+    {{ title_suffix }}
+  {% endif %}
+
+  {# Text Body #}
+  <div {{ bem('body', card__body__modifiers, card__base_class) }}>
+    {{ card__body }}
+  </div>
+
+  {# Button Container #}
+  {% if card__button__url %}
+    {# Button #}
+    <div {{ bem('cta', card__cta__modifiers, card__base_class) }}>
+      {% include "@atoms/buttons/button.twig" with {
+        button_modifiers: card__button__modifiers,
+        button_content: card__button__content,
+        button_url: card__button__url,
+        button_type: 'link',
+        button_icon: 'arrow',
+        button__aria_hidden: button__aria_hidden
+      } %}
+    </div>
+  {% endif %}
+</div>

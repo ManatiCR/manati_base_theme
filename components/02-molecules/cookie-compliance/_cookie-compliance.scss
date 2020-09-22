@@ -1,0 +1,48 @@
+// Styles for eu cookie compliance banner.
+.eu-cookie-compliance-banner {
+  background-color: $red;
+
+  .eu-cookie-compliance-content {
+    display: flex;
+    flex-flow: column nowrap;
+    @include padding-xs(top bottom);
+
+    @include medium {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+
+  .eu-cookie-compliance-message {
+    @include margin-xs(bottom);
+
+    margin-top: 0;
+    color: $white;
+
+    @include medium {
+      margin-bottom: 0;
+    }
+  }
+
+  .eu-cookie-compliance-buttons {
+    margin: 0;
+
+    @include medium {
+      align-self: center;
+    }
+
+    .agree-button {
+      @extend .button;
+
+      margin: 0;
+      background: $white;
+      box-shadow: none;
+      text-shadow: none;
+      font-size: $font-medium;
+
+      &:hover {
+        background: $red-light;
+      }
+    }
+  }
+}

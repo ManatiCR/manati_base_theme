@@ -1,0 +1,28 @@
+card__modifiers:
+  - 'image-svg'
+
+card__image_src:
+card__image_alt: 'cellphone-image'
+
+card__image:
+  src: 'https://cdn.computerhoy.com/sites/navi.axelspringer.es/public/styles/1200/public/media/image/2017/12/276661-aplicaciones-gratis-editar-fotos-movil-google.jpg?itok=CZNIk1Nn'
+  alt: 'cellphone-image'
+card__svg: 'circles-md'
+
+card__container__modifiers:
+  - 'image-svg'
+
+card__heading: Tiendas de la asociación
+card__heading_element: h2
+card__body: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Donec elementum ligula eu sapien consequat eleifend.'
+card__body__modifiers:
+  - 'image-svg'
+
+card__cta__modifiers:
+  - image-svg
+card__buttons:
+  - content: 'Ver convenios'
+    url: '#'
+    icon:
+      - 'arrow'

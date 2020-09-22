@@ -1,0 +1,58 @@
+.banner {
+  background-color: $red;
+  display: flex;
+  flex-direction: column;
+
+  @include medium {
+    flex-direction: row-reverse;
+  }
+}
+
+.banner__image {
+  flex: 1;
+  margin: 0 -1rem;
+
+  img {
+    display: block;
+    height: 100%;
+    max-width: 100%;
+    object-fit: cover;
+    width: 100%;
+  }
+}
+
+.banner__content {
+  flex: 1;
+
+  // Heading
+  .heading {
+    @include heading-xl($color: $white, $margin: 0, $font-weight: 600);
+  }
+
+  // Content
+  @include padding-lg(top bottom);
+  @include padding-xl(right);
+
+  // Breakpoint
+  @include medium {
+    @include padding-lg(top);
+    @include no-bottom;
+  }
+}
+
+.banner__description {
+  // Paragraph
+  @include paragraph($white);
+
+  @include padding-xs(top);
+  @include padding-sm(bottom);
+
+  a,
+  a:hover {
+    color: $white;
+  }
+}
+
+.banner__button-container {
+  @include responsive-buttons;
+}

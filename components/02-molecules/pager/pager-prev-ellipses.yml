@@ -1,0 +1,12 @@
+ellipses:
+  previous: true
+items:
+  previous: {
+    text: 'Anterior'
+  }
+  pages: {
+    5: { href: '#' },
+    6: { href: '#' },
+    7: { href: '#' },
+    8: { href: '#' }
+  }

@@ -1,0 +1,244 @@
+// Styles for section layouts.
+
+// Section Layout breakpoint.
+$section-layout-breakpoint: 800px;
+
+@mixin section-layout-breakpoint {
+  @include breakpoint($section-layout-breakpoint) {
+    @content;
+  }
+}
+
+// Landing page nodes should have overflow: hidden;
+.node--landing-page.node--full {
+  overflow: hidden;
+}
+
+// General styles.
+.layout__content {
+  position: relative;
+
+  > div, > article, > section {
+    position: relative;
+    z-index: 1;
+  }
+}
+
+// Full width variant
+.layout:not(.layout--fixed-width) {
+  .layout__content {
+    @include wrapper;
+  }
+}
+
+// Fixed width variant.
+.layout--fixed-width {
+  @include wrapper;
+  @include xl {
+    padding: 0 1rem;
+  }
+}
+
+// Background-colors.
+.layout--background-gray {
+  background-color: $near-white;
+}
+
+.layout--background-red {
+  background-color: $red;
+}
+
+// Top/bottom spacing.
+.layout--spacing-top-large {
+  @include padding-xxl(top);
+}
+
+.layout--spacing-top-medium {
+  @include padding-md(top);
+}
+
+.layout--spacing-top-small {
+  @include padding-xs(top);
+}
+
+.layout--spacing-bottom-large {
+  @include padding-xxl(bottom);
+}
+
+.layout--spacing-bottom-medium {
+  @include padding-md(bottom);
+}
+
+.layout--spacing-bottom-small {
+  @include padding-xs(bottom);
+}
+
+// General styles for multi-column variants.
+.layout--twocol, .layout--threecol {
+  .layout__content {
+    @include section-layout-breakpoint {
+      display: flex;
+    }
+  }
+}
+
+// Layout column general styles.
+.layout__column {
+  margin-bottom: 1.25rem;
+  @include section-layout-breakpoint {
+    margin-bottom: 0;
+  }
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+// Two column variant.
+.layout--twocol-50-50 {
+  .layout__column {
+    flex: 1 1 50%;
+  }
+}
+
+.layout--twocol-30-70 {
+  .layout__column--first {
+    flex: 1 1 30%;
+  }
+  .layout__column--second {
+    flex: 1 1 70%;
+  }
+}
+
+.layout--twocol-70-30 {
+  .layout__column--first {
+    flex: 1 1 70%;
+  }
+  .layout__column--second {
+    flex: 1 1 30%;
+  }
+}
+
+.layout--twocol-40-60 {
+  .layout__column--first {
+    flex: 1 1 40%;
+  }
+  .layout__column--second {
+    flex: 1 1 60%;
+  }
+}
+
+.layout--twocol-60-40 {
+  .layout__column--first {
+    flex: 1 1 60%;
+  }
+  .layout__column--second {
+    flex: 1 1 40%;
+  }
+}
+
+// Three column variant.
+.layout--threecol {
+  .layout__column {
+    flex: 1 1 33%;
+  }
+}
+
+// Space between columns.
+.layout--spacing-cols-small,
+.layout--spacing-cols-medium,
+.layout--spacing-cols-large {
+  .layout__column {
+    &:first-child {
+      margin-left: 0;
+    }
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+.layout--spacing-cols-small {
+  .layout__column {
+    @include section-layout-breakpoint {
+      margin: 0 0.625rem;
+    }
+  }
+}
+
+.layout--spacing-cols-medium {
+  .layout__column {
+    @include section-layout-breakpoint {
+      margin: 0 1.25rem;
+    }
+  }
+}
+
+.layout--spacing-cols-large {
+  .layout__column {
+    @include section-layout-breakpoint {
+      margin: 0 2.5rem;
+    }
+  }
+}
+
+// Make column content equal height (for two and three column variants).
+.layout--content-equal-height {
+  .layout__column {
+    > div, > article, > section {
+      &:first-child:last-child {
+        height: 100%;
+      }
+    }
+  }
+}
+
+// Decoration.
+.layout--decoration-two-circles-left-top,
+.layout--decoration-one-circle-right-top,
+.layout--decoration-one-circle-right-bottom {
+  .layout__content {
+    &::after {
+      position: absolute;
+      content: '';
+    }
+  }
+}
+
+.layout--decoration-two-circles-left-top {
+  .layout__content {
+    &::after {
+      width: px2rem(196);
+      height: px2rem(198);
+      top: px2rem(-110);
+      left: px2rem(-196);
+      background-image: url(../images/decoration-two-circles.svg);
+    }
+  }
+}
+
+.layout--decoration-one-circle-right-top {
+  .layout__content {
+    &::after {
+      width: px2rem(297);
+      height: px2rem(294);
+      top: px2rem(-160);
+      right: px2rem(-140);
+      background-image: url(../images/decoration-one-circle.svg);
+      transform: rotate(40deg);
+    }
+  }
+}
+
+.layout--decoration-one-circle-right-bottom {
+  .layout__content {
+    &::after {
+      width: px2rem(297);
+      height: px2rem(294);
+      bottom: px2rem(-160);
+      right: px2rem(-140);
+      background-image: url(../images/decoration-one-circle.svg);
+      transform: rotate(40deg);
+    }
+  }
+}
+

@@ -1,0 +1,56 @@
+{#
+  # Available variables:
+  # - banner__base_class - base classname of the wrapper.
+  # - banner__modifiers - array of modifiers to add to the base classname of the wrapper.
+
+  # - banner__image - the image info(src, alt).
+
+  # - banner__title_element - the controlling element tag.
+  # - banner__heading - the content of the heading.
+  # - banner__description - the content of the description.
+
+  # - buttons - the butons array info (content, url, icon, modifiers, type).
+#}
+
+{% set banner__base_class = 'banner' %}
+
+<div {{ bem(banner__base_class, banner__modifiers)}} {{ attributes }}>
+  {# Image #}
+  {% block banner__img %}
+    <div {{ bem('image', '', banner__base_class) }}>
+      <img src="{{banner__image.src}}" alt="{{banner__image.alt}}"/>
+    </div>
+  {% endblock %}
+  {# Content #}
+  <div {{ bem('content', '', banner__base_class) }}>
+    {# Heading #}
+    {{ title_prefix }}
+    {% if banner__heading %}
+      <{{banner__title_element}} {{bem('heading')}} >
+        {{banner__heading}}
+      </{{banner__title_element}} >
+    {% endif %}
+    {{ title_suffix }}
+    {# Description #}
+    {% if banner__description %}
+      <div class='banner__description'>
+        {{banner__description}}
+      </div>
+    {% endif %}
+    {# Button Container #}
+    {% if buttons %}
+      <div {{ bem('button-container', banner__content__modifiers, banner__base_class) }}>
+        {% for button in buttons %}
+          {# Buttons #}
+          {% include "@atoms/buttons/button.twig" with {
+            button_content: button.content,
+            button_url: button.url,
+            button_modifiers: button.modifiers,
+            button_type: button.type,
+            button_icon: button.icon
+          } %}
+        {% endfor %}
+      </div>
+  {% endif %}
+  </div>
+</div>

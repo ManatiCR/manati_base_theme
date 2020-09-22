@@ -1,0 +1,35 @@
+{#
+/**
+ * @file
+ * Custom template for the Font size switcher component.
+ */
+#}
+
+{% set base_class = 'font-size-switcher' %}
+
+<div {{ bem(base_class) }}>
+  <h2 {{ bem('title', [], base_class) }}>Tamaño de la letra</h2>
+  <div {{ bem('buttons', [], base_class) }}>
+    <button
+      {{ bem('button', ['normal', 'active'], base_class) }}
+      data-font-size="normal"
+      title="Normal"
+    >
+      Normal
+    </button>
+    <button
+      {{ bem('button', ['big'], base_class) }}
+      data-font-size="big"
+      title="Grande"
+    >
+      Grande
+    </button>
+    <button
+      {{ bem('button', ['bigger'], base_class) }}
+      data-font-size="bigger"
+      title="Muy Grande"
+    >
+      Muy grande
+    </button>
+  </div>
+</div>

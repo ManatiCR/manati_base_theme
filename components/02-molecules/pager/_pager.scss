@@ -1,0 +1,103 @@
+.pager {
+  @include margin-md(top bottom);
+}
+
+.pager__items {
+  @include list-reset;
+
+  text-align: center;
+}
+
+.pager__item {
+  display: inline-block;
+  font-size: px2rem(12);
+
+  @include small {
+    font-size: px2rem(14);
+  }
+
+  &--ellipsis {
+    @include small {
+      padding: 0 0.5rem;
+    }
+  }
+}
+
+.pager__link,
+.pager__link:link,
+.pager__link:visited {
+  display: inline;
+  background-color: $gray-lightest;
+  color: $black;
+  padding: 0.4rem;
+  text-decoration: none;
+
+  @include small {
+    padding: 0.5rem;
+  }
+
+  &:hover, &:focus, &.is-active {
+    background-color: $red;
+    color: $white;
+    text-decoration: underline;
+  }
+
+  &:hover {
+    font-weight: normal;
+  }
+}
+
+.pager__link--prev,
+.pager__link--next {
+  .icon {
+    vertical-align: -1px;
+    width: px2rem(8);
+    height: px2rem(12);
+
+    @include small {
+      vertical-align: -2px;
+      width: px2rem(9.5);
+      height: px2rem(14);
+    }
+  }
+
+  &:hover, &:focus {
+    .icon {
+      fill: $white;
+    }
+  }
+}
+
+.pager__link--first,
+.pager__link--last {
+  .pager__label {
+    display: none;
+
+    @include small {
+      display: inline;
+    }
+  }
+
+  .icon {
+    width: px2rem(15);
+    height: px2rem(12);
+    vertical-align: -1px;
+
+    @include small {
+      display: none;
+    }
+  }
+
+  &:hover, &:focus {
+    .icon {
+      fill: $white;
+    }
+  }
+}
+
+.pager__link--first,
+.pager__link--prev {
+  .icon {
+    transform: rotate(180deg);
+  }
+}

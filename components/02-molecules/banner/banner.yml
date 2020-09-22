@@ -1,0 +1,20 @@
+banner__image:
+  src: 'https://www.founderlist.la/panel/repositorio/blog/imageblog5d6aa5bc56b5b52.jpg'
+  alt: "This is the card image's alt text"
+banner__title_element: h2
+banner__heading: Solidarismo
+banner__description: El solidarismo se entiende como unidad, integración; es la unión de personas que se organizan con la finalidad de conseguir el desarrollo integral para ellas, para su empresa y para sus familiares. Es a partir de este principio que nacen las asociaciones solidaristas en empresas. Ayudarnos, mantener una unión y beneficios a través del bien común.
+
+buttons:
+  - content: 'Quiero formar parte'
+    url: '#'
+    type: 'link'
+    icon: arrow
+    modifiers:
+      - alt-red
+  - content: 'Contáctenos'
+    url: '#'
+    type: 'link'
+    icon: arrow
+    modifiers:
+      - alt-red

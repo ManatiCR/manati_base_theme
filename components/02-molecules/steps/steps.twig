@@ -1,0 +1,90 @@
+{#
+  # Available variables:
+  # - steps__base_class - base classname of the wrapper.
+  # - steps__modifiers - array of modifiers to add to the base classname of the wrapper.
+
+  # - steps__image - the image info(src, alt).
+
+  # - steps__title_element - the controlling element tag.
+  # - steps__heading - the content of the heading. Position Modifier: center, left
+  # - steps__description - the content of the description.
+
+  # - buttons - the butons array info (content, url, icon, modifiers, type).
+#}
+
+{% set steps__base_class = 'steps' %}
+{% set steps__invidual_class = 'step' %}
+
+{{ attach_library('asebac/steps') }}
+
+<div {{ bem(steps__base_class, steps__modifiers, steps__blockname) }} {{ attributes }}>
+  {# Steps Heading #}
+  {{ title_prefix }}
+  {% if steps__heading %}
+    <{{steps__heading_element}} {{ bem('heading', steps__heading__modifiers, steps__base_class) }}>
+      {{ steps__heading }}
+    </{{steps__heading_element}}>
+  {% endif %}
+  {{ title_suffix }}
+  <div {{ bem('container', steps__modifiers, steps__base_class) }}>
+    {% block steps_content %}
+      {% for step in steps %}
+      <div {{ bem('card', steps__modifiers, steps__base_class) }}>
+        {% if step.icon_src %}
+          {% block step_icon %}
+          {% include "@atoms/images/image/responsive-image.twig" with {
+            output_image_tag: true,
+            image_src: step.icon_src,
+            image_alt: step.icon_alt,
+            responsive_image_blockname: 'step',
+          } %}
+        {% endblock %}
+        {% endif %}
+
+        {# Title #}
+        {% if step.heading %}
+          <{{step.heading_element}} {{ bem('heading', steps__heading__modifiers, steps__invidual_class) }}>
+            {{ step.heading }}
+          </{{step.heading_element}}>
+        {% endif %}
+
+        {# Content #}
+        <div {{ bem('content', steps__body__modifiers, steps__invidual_class) }}>
+          {{ step.content }}
+        </div>
+      </div>
+    {% endfor %}
+    {% endblock %}
+  </div>
+  {# Menu #}
+  <ul {{ bem('control-menu', step__menu__modifiers, steps__base_class) }}>
+    <li {{ bem('pager', step__menu__modifiers, steps__base_class) }}></li>
+    <li>
+      <button aria-label="Item Anterior" {{ bem('prev', step__menu__modifiers, steps__base_class) }}>
+        {% include "@atoms/images/icons/_icon.twig" with {
+          icon_name: 'previous-steps',
+        } %}
+      </button>
+    </li>
+    <li>
+      <button aria-label="Siguiente Item" {{ bem('next', step__menu__modifiers, steps__base_class) }}>
+        {% include "@atoms/images/icons/_icon.twig" with {
+          icon_name: 'next-steps',
+        } %}
+    </button>
+    </li>
+  </ul>
+  {# Button Container #}
+  {% block button_content %}
+    <div {{ bem('link-container', step__cta__modifiers, steps__base_class) }}>
+      {% include "@atoms/buttons/button.twig" with {
+        button_base_class: step__base_class|default('button'),
+        button_modifiers: step__button_modifiers,
+        button_content: step__button_content,
+        button_url: step__button_url,
+        button_icon: step__button_icon,
+        button_type: step__button_type
+      } %}
+    </div>
+  {% endblock %}
+</div>

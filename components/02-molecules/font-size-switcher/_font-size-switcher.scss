@@ -1,0 +1,86 @@
+//
+// Styles for font size switcher component
+//
+
+.font-size-switcher {
+  display: flex;
+  align-items: center;
+
+  @include menu-medium {
+    margin-left: px2rem(30);
+  }
+
+  &__title {
+    font-size: px2rem(12);
+    margin: 0 px2rem(6) 0 0;
+    font-weight: 400;
+
+    @include menu-medium {
+      font-weight: 700;
+      margin: 0 px2rem(12) 0 0;
+    }
+  }
+
+  &__buttons {
+    display: flex;
+  }
+
+  &__button {
+    background-color: $white;
+    width: px2rem(18);
+    height: px2rem(18);
+    border: $gray 1px solid;
+    position: relative;
+
+    @include hide-text;
+
+    @include menu-medium {
+      width: px2rem(25);
+      height: px2rem(25);
+    }
+
+    & + & {
+      margin-left: px2rem(3);
+    }
+
+    &::after {
+      content: 'A';
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      text-indent: 0;
+    }
+  }
+
+  &__button--active {
+    border: $red 2px solid;
+
+    &::after {
+      color: $red;
+    }
+  }
+
+  &__button--normal::after {
+    font-size: px2rem(9);
+
+    @include menu-medium {
+      font-size: px2rem(12);
+    }
+  }
+
+  &__button--big::after {
+    font-size: px2rem(11);
+
+    @include menu-medium {
+      font-size: px2rem(14);
+    }
+  }
+  &__button--bigger::after {
+    font-size: px2rem(14);
+
+    @include menu-medium {
+      font-size: px2rem(18);
+    }
+  }
+}

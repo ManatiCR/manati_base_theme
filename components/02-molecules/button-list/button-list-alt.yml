@@ -1,0 +1,13 @@
+button_list__heading: "Reglamentos y formularios"
+button_list__heading_element: "h2"
+button__modifiers: 
+  - 'border-bottom'
+button_list__buttons:
+  - content: 'Reglamento general de crédito'
+    url: '#'
+  - content: 'Términos y condiciones'
+    url: '#'
+  - content: 'Reglamento general de crédito'
+    url: '#'
+button_list__modifiers: 
+  - "alt"

@@ -1,0 +1,11 @@
+button_list__heading: "Nuestro trabajo"
+button_list__heading_element: "h2"
+button__modifiers: 
+  - 'alt'
+button_list__buttons:
+  - content: 'Estadísticas'
+    url: '#'
+  - content: 'Reglamentos'
+    url: '#'
+  - content: 'Reglamentos'
+    url: '#'

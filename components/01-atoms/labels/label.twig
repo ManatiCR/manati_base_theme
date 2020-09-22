@@ -1,0 +1,15 @@
+{% set label__base_class = 'label' %}
+
+{% if label %}
+    <ol {{ bem(label__base_class) }}>
+    {% for item in label %}
+      <li {{ bem('item', [], label__base_class) }}>
+        {% if item.url %}
+          <a {{ bem('link', [], label__base_class) }} href="{{ item.url }}">{{ item.text }}</a>
+        {% else %}
+          {{ item.text }}
+        {% endif %}
+      </li>
+    {% endfor %}
+    </ol>
+{% endif %}

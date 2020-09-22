@@ -1,0 +1,4 @@
+link_url: 'https://github.com/manati_base_theme-ds/manati_base_theme-design-system'
+link_content: 'This is my link text'
+link_attributes:
+  'target': '_blank'

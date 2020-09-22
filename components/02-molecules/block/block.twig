@@ -1,0 +1,29 @@
+{#
+/**
+ * @file
+ * Theme override to display a block.
+ *
+ * Available variables:
+ * - block_heading_element - The heading tag used by the Title.
+ * - block_heading - The content of the title.
+ * - block_base_class - the base classname
+ * - block_modifiers - array of modifiers to add to the base classname
+ * - block_blockname - blockname prepended to the base classname
+ * - block_content - the content of the block
+ */
+#}
+
+{% set block_base_class = block_base_class|default('block') %}
+
+<div{{ bem(block_base_class, block_modifiers, block_blockname) }} {{ attributes }}>
+	{{ title_prefix }}
+	{% if block_heading %}
+		<{{ block_heading_element }} {{ bem('heading', block_modifiers, block_base_class) }}>
+			{{ block_heading }}
+		</{{block_heading_element}}>
+	{% endif %}
+	{{ title_suffix }}
+	{% block block_content %}
+		{{ block_content }}
+	{% endblock %}
+</div>

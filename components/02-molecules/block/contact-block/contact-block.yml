@@ -1,0 +1,23 @@
+block__heading: ¡Contáctenos por WhatsApp!
+block__heading_element: h2
+block__phone: +506 8888-8888
+block__button:
+    content: Abrir WhatsApp
+    url: '#'
+    modifiers:
+      - 'outline'
+block__schedule: 'L - V 7:00 am a 5:00 pm'
+
+block__content: '<p><u><strong>San José</strong></u></p><p>&nbsp;</p><p><strong>Horario:</strong> L - V 7:00 am a 5:00 pm<br /><strong>Correo:</strong> asebac@asebac.com<br /><strong>Teléfono:</strong> +506 2222 2222</p><p>&nbsp;</p><p><u><strong>San José</strong></u></p><p>&nbsp;</p><p><strong>Horario:</strong> L - V 7:00 am a 5:00 pm<br /><strong>Correo:</strong> asebac@asebac.com<br /><strong>Teléfono:</strong> +506 2222 2222</p><p>&nbsp;</p><p><u><strong>San José</strong></u></p><p>&nbsp;</p><p><strong>Horario:</strong> L - V 7:00 am a 5:00 pm<br /><strong>Correo:</strong> asebac@asebac.com<br /><strong>Teléfono:</strong> +506 2222 2222</p>'
+
+block__social_heading: 'Síganos en redes sociales'
+block__social_content:
+  - src: https://www.rutgerson.se/wp-content/uploads/2016/11/facebook-icon-png-black.png
+    alt: Facebook
+    url: '#'
+  - src: https://www.rutgerson.se/wp-content/uploads/2016/11/facebook-icon-png-black.png
+    alt: Facebook
+    url: '#'
+  - src: https://www.rutgerson.se/wp-content/uploads/2016/11/facebook-icon-png-black.png
+    alt: Facebook
+    url: '#'
