@@ -10,20 +10,13 @@
   border: none;
   color: $color;
   cursor: pointer;
-  line-height: $line-height-large;
   display: flex;
   align-items: center;
   justify-content: center;
   text-decoration: none;
   text-align: center;
   border-radius: 0.2rem;
-  font-size: $font-small;
   font-weight: 600;
-
-  @include medium {
-    font-size: $font-medium;
-  }
-
   padding: $space $space-double;
 
   &:visited {

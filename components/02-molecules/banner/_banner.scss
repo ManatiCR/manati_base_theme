@@ -1,5 +1,5 @@
 .banner {
-  background-color: $red;
+  background-color: $gray;
   display: flex;
   flex-direction: column;
 
@@ -30,12 +30,11 @@
   }
 
   // Content
-  @include padding-lg(top bottom);
-  @include padding-xl(right);
+  padding: $space-quadruple 0;
+  padding-right: $space-sextuple;
 
   // Breakpoint
   @include medium {
-    @include padding-lg(top);
     @include no-bottom;
   }
 }
@@ -44,8 +43,8 @@
   // Paragraph
   @include paragraph($white);
 
-  @include padding-xs(top);
-  @include padding-sm(bottom);
+  padding-top: $space-double;
+  padding-bottom: $space-triple;
 
   a,
   a:hover {
