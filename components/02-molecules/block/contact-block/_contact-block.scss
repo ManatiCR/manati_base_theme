@@ -3,40 +3,38 @@
 }
 
 .contact-block__main-container {
-  @include padding-md(top bottom);
-  @include padding-sm(left right);
-
+  padding: $space-double $space-triple;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
   background-color: $near-white;
-  color: $red;
+  color: $gray;
 }
 
 .contact-block__heading {
-  @include heading-medium($color: $red, $font-weight: 600, $margin: 0);
-  @include margin-xs(bottom);
+  @include heading-medium($color: $gray, $font-weight: 600, $margin: 0);
 
+  margin-bottom: $space-double;
   text-decoration: underline;
 }
 
 .contact-block__phone {
-  @include heading-medium($color: $red, $font-weight: 600, $margin: 0);
+  @include heading-medium($color: $gray, $font-weight: 600, $margin: 0);
   &:hover {
-    color: $red;
+    color: $gray;
     font-weight: 600;
   }
 }
 
 .contact-block__cta {
-  @include margin-xs(top bottom);
+  margin-top: $space-double;
+  margin-bottom: $space-double;
 }
 
 .contact-block__secondary-container {
-  @include padding-sm(top right bottom left);
-
-  background-color: $red;
+  padding: $space-double;
+  background-color: $gray;
   color: $white;
 
   a,
@@ -46,7 +44,7 @@
 }
 
 .contact-block__content {
-  @include padding-sm(bottom);
+  padding-bottom: $space-double;
 
   > p {
     color: $white;
@@ -54,14 +52,13 @@
 }
 
 .contact-block__social-content {
-  @include padding-sm(top);
-
+  padding-top: $space-double;
   border-top: 1px solid $white;
 }
 
 .contact-block__social-heading {
   @include heading-medium($font-size: 1rem, $color: $white, $font-weight: 600);
-  @include margin-xs(bottom);
 
+  margin-bottom: $space-double;
   text-decoration: underline;
 }
