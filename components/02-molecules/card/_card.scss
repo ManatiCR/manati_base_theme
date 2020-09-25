@@ -8,176 +8,15 @@
 
 .card {
   @include card;
-
-  &--alt {
-    @include card($bg: $red);
-
-    display: inline-block;
-    text-align: initial;
-    border-radius: 0;
-
-    .card__container {
-      @include padding-xs(right left);
-      @include padding-sm(top bottom);
-      @include medium {
-        padding:3.1rem;
-        @include padding-sm(right left);
-      }
-    }
-
-    .card__heading {
-      @include margin-sm(bottom);
-      @include medium {
-        margin-bottom: 3.1rem;
-      }
-    }
-
-    .card__heading,
-    .card__body {
-      color: $white;
-
-      a,
-      a:hover {
-        color: $white;
-      }
-
-      .text:not(:last-of-type) {
-        border-bottom: 1px solid $white;
-      }
-    }
-  }
-
-  &--outline {
-    border: 2px solid $gray-lightest;
-    text-align: center;
-
-    .card__cta {
-      align-items: center;
-      width: 100%;
-
-      @include medium {
-        align-items: flex-start;
-      }
-    }
-  }
-
-  &--border,
-  &--red {
-    background-color: transparent;
-    border: 3px solid $red;
-    box-shadow: none;
-
-    .card__heading {
-      @include heading-medium($color: $red, $font-size: 1.1rem, $font-weight: 600);
-      @include margin-xs(bottom);
-
-      @include medium {
-        @include margin-sm(bottom);
-      }
-    }
-
-    .card__body {
-      color: $red;
-      @include no-bottom;
-    }
-  }
-
-  &--red {
-    border: none;
-  }
-}
-
-.card--rounded,
-.card--image-svg {
-  display: flex;
-  flex-direction: column;
-  box-shadow: none;
-  min-height: 15rem;
-  border-radius: 0;
-
-  @include medium {
-    flex-direction: row-reverse;
-  }
-}
-
-.card--rounded {
-  background: linear-gradient($white 20%, $red 20%, $red 80%);
-
-  .card__container {
-    @include padding-xs(right left);
-    @include medium {
-      @include padding-sm(right left);
-    }
-
-  }
-
-  .card__body {
-    @include margin-sm(bottom);
-    @include medium {
-      @include margin-xs(bottom);
-    }
-  }
-
-  .card__heading,
-  .card__body {
-    color: $white;
-
-    a,
-    a:hover {
-      color: $white;
-    }
-  }
-
-  @include medium {
-    background: $gray-lightest;
-
-    .card__heading,
-    .card__body {
-      color: $gray-darker;
-
-      a {
-        color: $red;
-
-        &:hover {
-          color: $red-darkest;
-        }
-      }
-    }
-  }
-}
-
-.card--image-svg {
-  background: transparent;
-  box-shadow: none;
-
-  .card__container {
-    @include padding-xxs(right left);
-    @include padding-sm(top bottom);
-
-    @include medium {
-      margin: 0;
-      padding: 0;
-    }
-  }
-
-  .card__heading {
-    color: $red;
-  }
-
-  .card__body {
-    color: $gray;
-  }
-
 }
 
 .card__container {
   align-self: center;
-
-  @include padding-xxs(right left);
-  @include padding-sm(top bottom);
-
+  padding: $space $space-triple;
+  
   @include medium {
-    @include padding-xs(right left);
+    padding-right: $space-double;
+    padding-left: $space-double;
   }
 
   &--image-svg {
@@ -288,9 +127,9 @@
   }
 
   .card__body {
-    @include margin-xs(bottom);
+    margin-bottom: $space-double;
     @include medium {
-      @include margin-sm(bottom);
+      margin-bottom: $space-triple;
     }
   }
 
@@ -301,14 +140,14 @@
   }
 
   .card__heading {
-    @include margin-xs(bottom);
+    margin-bottom: $space-double;
   }
 }
 
 .card__heading {
   @include heading-large;
-  @include margin-sm(bottom);
-
+  
+  margin-bottom: $space-triple;
   font-size: $font-regular;
   font-weight: 600;
 
@@ -329,12 +168,13 @@
 
 .card__body {
   @include paragraph($color: $gray);
-  @include margin-sm(bottom);
+  
+  margin-bottom: $space-triple;
 
   .text:not(:last-of-type) {
     border-bottom: 1px solid $red;
-    @include margin-md(bottom);
-    @include padding-md(bottom);
+    margin-bottom: $space-quadruple;
+    padding-bottom: $space-quadruple;
   }
 }
 

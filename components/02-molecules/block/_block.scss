@@ -6,10 +6,10 @@
 #block-asebac-page-title h1 {
   @include heading-xl($font-weight: 600, $margin: 0);
 
-  @include margin-xs(bottom);
+  margin-bottom: $space-double;
 
   @include medium {
-    @include margin-sm(bottom);
+    margin-bottom: $space-triple;
   }
 }
 
@@ -19,12 +19,12 @@
 
 // Landing page content region block.
 .block--content-region {
-  @include margin-xs(bottom);
+  margin-bottom: $space-double;
 
   // Add wrapper when block is in a full width page.
   .main-full-width & {
     @include wrapper;
     // Need to add this again, because of specificity.
-    @include margin-xs(bottom);
+    margin-bottom: $space-double;
   }
 }

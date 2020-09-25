@@ -1,31 +1,23 @@
 @mixin button(
   $bg: $white,
-  $color: $red,
-  $hoverBg: $red,
-  $hoverColor: $white,
-  $iconColor: $red,
-  $iconHoverColor: $white
+  $color: $gray-darker,
+  $hoverBg: $gray-lightest,
+  $hoverColor: $gray-darker,
+  $iconColor: $gray-light,
+  $iconHoverColor: $gray
 ) {
   background-color: $bg;
   border: none;
   color: $color;
   cursor: pointer;
-  line-height: $line-height-large;
   display: flex;
   align-items: center;
   justify-content: center;
   text-decoration: none;
   text-align: center;
   border-radius: 0.2rem;
-  font-size: $font-small;
   font-weight: 600;
-
-  @include medium {
-    font-size: $font-medium;
-  }
-
-  @include padding-xs(right left);
-  @include padding-xxs(top bottom);
+  padding: $space $space-double;
 
   &:visited {
     color: $color;
@@ -49,69 +41,5 @@
     width: 0.9rem;
     margin-left: px2rem(10px);
     fill: $iconColor;
-  }
-}
-
-.button {
-  @include button;
-
-  &--alt {
-    @include button($red, $white, $red-lighter, $white, $white, $white);
-  }
-
-  &--alt-red {
-    @include button($white, $red, $red-lighter, $white, $red, $white);
-  }
-
-  &--outline {
-    @include button(transparent, $red, $red, $white);
-
-    border: 2px solid $red;
-  }
-
-  &--outline-alt {
-    @include button(transparent, $white, $red-lighter, $white);
-
-    border: 2px solid $white;
-  }
-
-  &--download {
-    @include button($gray, $white, $red-darker, $white);
-  }
-
-  &--link {
-    @include button($white, $red, $white, $red-light);
-
-    text-decoration: underline;
-  }
-
-  &--transparent {
-    @include button(transparent, $black, transparent, $black, $black, $black);
-  }
-
-  &--border-bottom {
-    @include button(transparent, $black, transparent, $black, $black, $black);
-
-    display: flex;
-    justify-content: space-between;
-    position: relative;
-    z-index: 1;
-    font-size: $font-medium;
-    text-align: start;
-
-    &:not(:last-child)::before {
-      content: '';
-      position: absolute;
-      left: 50%;
-      bottom: 0;
-      height: 1px;
-      width: 100%;
-      transform: translate(-50%, 0);
-      border-bottom: 1px solid $black;
-    }
-  }
-
-  &--shadow {
-    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   }
 }
